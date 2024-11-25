@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+@media (max-width: 768px) {
+    /* Header Responsivo */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .logo-principal img {
+        max-height: 60px;
+    }
+
+    .itens-nav {
+        display: none; /* Esconde a navegação padrão */
+    }
+
+    /* Sidebar Responsiva */
+    .sidebar {
+        width: 100%; /* Ocupa a largura total no celular */
+        left: -100%; /* Fora da tela inicialmente */
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.open {
+        left: 0; /* Aparece na tela */
+    }
+
+    /* Menu Hamburger */
+    .menu-hamburger {
+        display: flex; /* Exibe o menu hambúrguer */
+        cursor: pointer;
+    }
+
+    .menu-hamburger .bar {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        margin: 4px 0;
+        border-radius: 5px;
+    }
+
+    .close-btn {
+        display: block; /* Exibe o botão de fechar na sidebar */
+    }
+
+    /* Idiomas na parte inferior */
+    .language-selector {
+        margin-top: auto; /* Empurra para o final da sidebar */
+    }
+}
+header {
+    background: linear-gradient(90deg, #EA950E, #2C65F4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-height: 40px;
+}
+.logo-principal img {
+    max-height: 100px;
+}
+
+
+.itens-nav ul {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 1200px;
+    list-style-type: none; /* Remove os pontos */
+    padding: 0;
+    display: flex; /* Coloca os itens lado a lado */
+    flex-wrap: wrap; /* Permite que os itens ocupem várias linhas se necessário */
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+.itens-nav ul li {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.itens-nav ul li#selecao-nav {
+    color: #EA950E;
+    text-decoration-color: #EA950E;
+}
+
+/* Estilo para o item selecionado */
+.itens-nav ul li#selecao-nav {
+    color: #EA950E;
+    text-decoration-color: #EA950E;
+}
+
+.itens-nav ul li {
+    padding: 10px 20px;
+    text-align: left;
+}
+.menu-hamburger {
+    width: 35px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-hamburger .bar {
+    width: 100%;
+    height: 5px; /* Espessura das linhas */
+    background-color: white;
+    border-radius: 10px; /* Arredonda as pontas das linhas */
+}
+
+
+.sidebar {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #F9F9F9;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 1000;
+    border-radius:  0px 15px 15px 0px;
+}
+.sidebar img {
+    
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    padding: 10px;
+}
+.sidebar .icon {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    width: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 24px;
+}
+.sidebar a {
+    text-decoration: none;
+    color: #333; /* Cor do texto */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+.language-selector {
+    padding: 10px;
+    border-top: 3px solid #e0e0e0;
+    margin-top: auto; /* Empurra a seção para o fundo da sidebar */ /* Linha separadora, se desejado */
+}
+
+.language-selector p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.language-selector button {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    background-color: #e0e0e0; /* Cor de fundo dos botões */
+    color: #333; /* Cor do texto dos botões */
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.language-selector button:hover {
+    background-color: #ccc; /* Cor de fundo ao passar o mouse */
+}
+.language-selector button.selected {
+    background-color: #007bff; /* Cor de fundo para o botão selecionado */
+    color: #fff; /* Cor do texto para o botão selecionado */
+}
+.sidebar.open {
+    left: 0;
+}
+
+.close-btn {
+    font-size: 50px;
+    color: #EA950E;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* Estilo geral da página */
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F1F1;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+}
+
+/* Layout principal do blog */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo das postagens do blog */
+.blog-post {
+    background-color: #FFF;
+    border-radius: 30px 30px 0 0;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho do post */
+.blog-post .header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.blog-post .header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+}
+
+.blog-post .header .highlight {
+    color: #0eb7ea;
+}
+
+/* Subtítulo e descrição do post */
+.blog-post .subheader p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Imagem dentro do post */
+.blog-post .image-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.blog-post .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Conteúdo do post */
+.blog-post .content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Rodapé do blog ou assinatura do autor */
+.blog-post .content .author {
+    font-style: italic;
+    color: #999;
+    text-align: right;
+}
+
+/* Estilos de links */
+a {
+    color: #EA950E;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2C65F4;
+    text-decoration: underline;
+}
+
+/* Resolução responsiva */
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 20px;
+    }
+    
+    .blog-post .header h2 {
+        font-size: 36px;
+    }
+    
+    .blog-post .subheader p, .blog-post .content p {
+        font-size: 16px;
+    }
+}
+
+/* Estilos do botão de voltar ao topo */
+#topBtn {
+    display: none; /* O botão ficará escondido inicialmente */
+    position: fixed; /* Fixa o botão no canto inferior direito da página */
+    bottom: 30px; /* Distância do botão em relação ao fundo da página */
+    right: 30px; /* Distância do botão em relação ao lado direito da página */
+    z-index: 99; /* Fica acima de outros elementos */
+    font-size: 18px;
+    background-color: #EA950E; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove borda */
+    outline: none; /* Remove contorno */
+    width: 50px;
+    height: 50px;
+    border-radius: 50px; /* Torna o botão circular */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Adiciona a transição de suavidade */
+}
+
+#topBtn:hover {
+    background-color: #2C65F4; /* Cor de fundo ao passar o mouse */
+}
